@@ -88,15 +88,7 @@ extern int cacheflush(char *addr, int nbytes, int cache);
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
-// use of basetsd.h makes code functional on windows x64 machine
-// does not optimize for x64 operations.
-#ifdef _WIN32
-	#include <BaseTsd.h>
-	typedef SSIZE_T ssize_t;
-#else
-	#include <unistd.h>
-#endif
+#include <unistd.h>
 
 #if defined(__sun)
 /* Most platforms have posix_memalign, older may only have memalign */
